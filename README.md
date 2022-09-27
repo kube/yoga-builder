@@ -12,6 +12,8 @@ It also provides types from `@types/yoga-layout`.
 
 Facebook's [Yoga Library](https://github.com/facebook/yoga) is written in C++, with JavaScript bindings, and is not compatible with versions of NodeJS > v10 (Current version is v18!), due to incompatibilities of [nbind](https://github.com/charto/nbind) (which is not maintained) with NodeJS C++ headers in v12 or later.
 
+Also, NodeJS v10 is not compatible with Macs on Apple Silicon, so this build uses a Dockerfile (can run with Linux ARM64 or AMD64).
+
 ## Build
 
 ```
