@@ -22,8 +22,8 @@ jobs:
     - name: Publish package to NPM
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        working-directory: dist/
-        run: |
+      working-directory: dist/
+      run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm config set scope "<@OWNER>"
           npm config list
