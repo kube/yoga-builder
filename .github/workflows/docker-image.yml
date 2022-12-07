@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build Builder Docker image
-      run: docker build . --file Dockerfile --tag yoga-builder:$(date +%s)
+      run: docker build . --file Dockerfile --tag yoga-builder
     - name: Build Yoga inside Builder Image
       run: docker run -v "$PWD/dist:/dist" yoga-builder
     - name: List contents of Build
