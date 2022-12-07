@@ -12,9 +12,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Build Builder Docker image
       run: docker build . --file Dockerfile --tag yoga-builder
+      
     - name: Build Yoga inside Builder Image
       run: docker run -v "$PWD/dist:/dist" yoga-builder
-    - name: List contents of Build
-      run: ls -l ./dist/dist
+
+    - name: Publish package to NPM
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: dist/
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
+          npm config set scope "<@OWNER>"
+          npm config list
+          npm publish --access public
