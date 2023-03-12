@@ -7,6 +7,6 @@
   repository: .repository,
   deprecated: .deprecated,
   bugs: .bugs,
-  main: .browser,
+  main: "./index.js",
   types: "./index.d.ts"
 }
