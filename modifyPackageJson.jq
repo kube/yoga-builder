@@ -7,6 +7,7 @@
   repository: .repository,
   deprecated: .deprecated,
   bugs: .bugs,
+  type: "module",
   main: "./index.js",
   types: "./index.d.ts"
 }
