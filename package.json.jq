@@ -1,6 +1,6 @@
 {
   name: "@kube/yoga-layout",
-  version: .version,
+  version: "2.0.0",
   description: .description,
   license: .license,
   homepage: .homepage,

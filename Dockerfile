@@ -10,6 +10,6 @@ RUN npm install yoga-layout @types/yoga-layout
 
 COPY ./build.sh ./
 COPY ./webpack.config.js ./
-COPY ./modifyPackageJson.jq ./
+COPY ./package.json.jq ./
 
 CMD [ "/build/build.sh" ]
